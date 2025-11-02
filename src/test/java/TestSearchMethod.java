@@ -12,7 +12,7 @@ public class TestSearchMethod {
     @Test
     public void test() throws Exception {
         SearchMethod ser = new SearchMethod();
-        File file = new File("D:\\A_document\\StaticCodeScan\\Static_Code_Scanning\\src\\main\\java\\org\\example\\CodeScanner.java");
+        File file = new File("D:\\A_document\\StaticCodeScan\\Static_Code_Scanning\\src\\main\\java\\org\\example\\scanner\\service\\SearchAnnotation.java");
 
         List<MethodResult> results = ser.searchMethodInFiles(file);
         log.info("扫描方法结果"+results);

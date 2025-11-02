@@ -1,6 +1,6 @@
 import lombok.extern.slf4j.Slf4j;
-import org.example.scanner.service.ConfigResult;
-import org.example.scanner.entity.SearchProperties;
+import org.example.scanner.entity.ConfigResult;
+import org.example.scanner.service.SearchProperties;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;

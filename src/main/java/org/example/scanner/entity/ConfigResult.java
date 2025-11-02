@@ -1,4 +1,4 @@
-package org.example.scanner.service;
+package org.example.scanner.entity;
 
 public class ConfigResult {
     public String filePath;

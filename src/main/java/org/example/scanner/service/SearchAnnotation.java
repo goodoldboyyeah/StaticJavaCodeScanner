@@ -20,6 +20,13 @@ import java.util.List;
 
 public class SearchAnnotation {
 
+    /**
+     *
+     * @param file
+     * @param annotation
+     * @return
+     * @throws FileNotFoundException
+     */
     public List<MethodResult> searchAnnotation(File file, String annotation) throws FileNotFoundException {
         CompilationUnit cu = StaticJavaParser.parse(file);
         // 需要先 setup 才能用 LexicalPreservingPrinter.print(...)

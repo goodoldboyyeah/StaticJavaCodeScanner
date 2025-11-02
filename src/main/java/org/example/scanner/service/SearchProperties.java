@@ -1,6 +1,6 @@
-package org.example.scanner.entity;
+package org.example.scanner.service;
 
-import org.example.scanner.service.ConfigResult;
+import org.example.scanner.entity.ConfigResult;
 
 import java.io.BufferedWriter;
 import java.io.File;

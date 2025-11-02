@@ -1,36 +1,33 @@
 package org.example.scanner.entity;
 
 public class MethodResult {
-
     public String classPath;
-    /** 完整类名（含包名与内部类链，如 com.a.b.Outer.Inner） */
     public String className;
-    /** 方法名（不含签名） */
     public String methodName;
-
     public String methodBody;
-
-    public String getMethodBody() {
-        return methodBody;
-    }
-
-    public void setMethodBody(String methodBody) {
-        this.methodBody = methodBody;
-    }
-
-    /** 方法开始/结束行 */
     public int methodStartLine;
     public int methodEndLine;
 
+    // 新增：方法头 Javadoc（原样，含 /** ... */）与纯文本
+    public String methodJavadoc;      // 原样
+    public String methodJavadocText;  // 纯文本（无 /** */、无星号）
+
     @Override
     public String toString() {
-        return "Result{" +
+        return "MethodResult{" +
                 "classPath='" + classPath + '\'' +
                 ", className='" + className + '\'' +
                 ", methodName='" + methodName + '\'' +
-                ", methodBody='" + methodBody + '\'' +
                 ", methodStartLine=" + methodStartLine +
                 ", methodEndLine=" + methodEndLine +
+                ", hasJavadoc=" + (methodJavadoc != null && !methodJavadoc.trim().isEmpty()) +
+                ", javadocPreview='" + preview(methodJavadocText) + "'" +
                 '}';
+    }
+
+    private String preview(String s) {
+        if (s == null) return "";
+        String one = s.replaceAll("\\s+", " ").trim();
+        return one.length() > 120 ? one.substring(0, 120) + " ..." : one;
     }
 }
